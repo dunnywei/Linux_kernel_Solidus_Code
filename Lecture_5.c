@@ -70,7 +70,9 @@ module_exit(hello_exit);
 
 /*
 ->https://www.youtube.com/watch?v=NYRhkGrt4Q4&index=5&list=PLZDevgBJtN8zyXV2QaozxzJzgJ9tpZY6p
-->helpful lnnk->https://www.tldp.org/LDP/lkmpg/2.6/html/index.html
+->helpful lnnk1->https://www.tldp.org/LDP/lkmpg/2.6/html/index.html
+->helpful link2->https://static.lwn.net/images/pdf/LDD3/ch14.pdf
+               ->https://static.lwn.net/images/pdf/LDD3/ch01.pdf
 ->Lecture 5_1
-->
+->USB device has a VendorID and Major ID
  */
