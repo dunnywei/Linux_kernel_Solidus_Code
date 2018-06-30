@@ -91,6 +91,12 @@ module_exit(hello_exit);
  or more endpoints(s).
  ->Each end point (1:44) describes input and output so it can take information from computer to the device(1:53)
  ->Every device has "end point 0". "End point 0" is (1:58) to intialize device and make it ready for usuage(2:02)
+ ->There are different types of "end points". They are Control, Interrupt, Bulk, isochronous (2:05)
+ ->"Control Endpoint"=control the device eg. resetting the device or query the infomration (2:19)
+ ->"Interrupt end point" is used to sending fast information between the device and computer (2:25)
+ ->"Bulk end point" apply long the most significatnt bit to indicate the direction of data either 
+ from the computer to device or device to computer (2:37)
+ ->All these types of endpoint are unit directional except(2:43) the control point which is bi-directional(2:47)
  ->
  
  
