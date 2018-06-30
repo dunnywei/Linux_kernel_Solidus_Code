@@ -75,4 +75,16 @@ module_exit(hello_exit);
                ->https://static.lwn.net/images/pdf/LDD3/ch01.pdf
 ->Lecture 5_1
 ->USB device has a VendorID and Major ID
+->while plugiing in the USB to the computer, the "USB host controller" takes all
+ (0:21), info to he binary named "USD_CORE" which is platfform independently
+ in kernel space(0:34)
+ ->The USB_core will then give then info to the operating system (0:39) at Linux Kernel (0:42)
+ ->The kernel will see if there is any device available to handle the particular device (0:50)
+ ->IF there is one available, it makes the device available to the user space (0:55)
+ ->If there is no driver available, the kernel still recognize the device (1:00)
+ ->the application in user space can't never know if the device exist or not (1:06)
+ ->The USD device is configured in the way that everyone has a profolio (1:13) 
+ 
+ 
+ 
  */
