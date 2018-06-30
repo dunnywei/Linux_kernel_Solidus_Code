@@ -83,7 +83,15 @@ module_exit(hello_exit);
  ->IF there is one available, it makes the device available to the user space (0:55)
  ->If there is no driver available, the kernel still recognize the device (1:00)
  ->the application in user space can't never know if the device exist or not (1:06)
- ->The USD device is configured in the way that everyone has a profolio (1:13) 
+ ->The USD device is configured in the way that everyone has a profolio (1:13) contains configuration(1:16)
+ ->WIthin the configuration, there are number of interfaces such as interface 1 or interface 2 (1:21)
+ ->The interface describes the functinality of the (1:26) of the device (1:28)
+ ->For example, it can be a printer, fax, (1:33) for scanner.
+ ->For each function, it is going to be an interface. At the same time(1:39), each interface has one 
+ or more endpoints(s).
+ ->Each end point (1:44) describes input and output so it can take information from computer to the device(1:53)
+ ->Every device has "end point 0". "End point 0" is (1:58) to intialize device and make it ready for usuage(2:02)
+ ->
  
  
  
