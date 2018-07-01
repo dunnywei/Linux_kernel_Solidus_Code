@@ -5,16 +5,23 @@
 //For usb driver
 static struct usb_device_id_pen_table[]={
    //0781:6506->this info is obtained by typing "lsusb" in CLI @(1:03)
-   {USB_DEVICE(0x0781,0x5406)},
+/*
+->what we have here is a way for the kernel to match any currenlty attached device (1:04) against all
+available drivers to find the right driver (1:09) to call 
+->To use that driver to manage (1:11) the newly installed and attached device so (1:16)
+
+*/
+   {USB_DEVICE(0x0781,0x5406)}, //->I can have more than more usb devcies by adding (3:13)as the following line(3:18)
+   //{USB_DEVICE(v,p)},
 	{} /*For terminating entry*/
 }
 
 static struct usb_driver pen_driver=
 {
-	.name="My-USB DEVICE pen driver", //nameing the drive as a whole(0:30)
-	.id_table=pen_table,//Id table is used to match this drive with any device that is attached to the USB bus(0:40)
-	                    //This is how kernel knows which driver to call to(0:46) to handle a particular device when it is plugged into the computer(0:49)
-	                    //This is a usb_device_id (0:55)
+	.name="My-USB DEVICE pen driver", //->naming the drive as a whole(0:30)
+	.id_table=pen_table,//->Id table is used to match this drive with any device that is attached to the USB bus(0:40)
+	                    //->This is how kernel knows which driver to call to(0:46) to handle a particular device when it is plugged into the computer(0:49)
+	                    //->This is a usb_device_id (0:55)
 	.probe=pen_probe,//
 	.disconnect=pen_disconnect,
 };
@@ -77,5 +84,9 @@ it has bandwith gurarentee (3:09) and it is usually found in audio/video device 
  */
 
 /*Lectutre_5_2
-
+->Type "lsusb" then find out that there is no pen_drive installed in my computer
+->Now I am going to instert the USB pendrive to my computer and then run (1:48) it again.
+->Type "lsusb" again, I find my pen drive (1:52) with ID 0781:5406 as VendorID:Product(ID) (2:25)
+->If you want to get more info about the vendor info, type "lsusb -v" (2:36)
+->
 */
