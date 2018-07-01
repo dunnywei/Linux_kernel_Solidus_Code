@@ -8,7 +8,21 @@
 /*
 ->It is called Whenever a device is plugged into your computer.However, it won't be called if another driver currentlly own that
 particlular device(@3:49)
+->If another driver is currenly installed and indicating to the kernel that it is repsonsible to manage the particular device that's
+plugged in (3:58) into the computer.
+->(@4:00) Then your probe function will not get called. As a result, if you want your device driver to manage a device instead
+(@4:07)Instead, you will have to unload the other driver and install yours in its place (4:13)
 */
+/*
+Proble function take as structure of (4:19)
+*/
+static int _pen_probe(struct usb_interfaace *interface,const struc usb_device_id *id)
+{
+	printk(KERN_INFO "[*] Pen Drve starts(%04x:%04x) to plug\n",id->idVendor,id-id->idProduct);
+	return 0;// return 0 means we will manage this device
+}
+
+
 
 //usb_device_id
 static struct usb_device_id_pen_table[]={
