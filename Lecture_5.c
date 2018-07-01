@@ -98,8 +98,13 @@ module_exit(hello_exit);
  from the computer to device or device to computer (2:37)
  ->All these types of endpoint are unit directional except(2:43) the control point which is bi-directional(2:47)
  ->"Bulk end point"->it is used for mass storage and (2:55) transfer large amount of data at once(2:58)
- ->"isochronous" is like a bulk transfer for tranfering large qunatitiy of infomration (3:06)
- ->
+ ->"isochronous" is like a bulk transfer for tranfering large qunatitiy of infomration (3:06).However
+it has bandwith gurarentee (3:09) and it is usually found in audio/video device (3:13)
+->End poit is identified by address and so each end point (3:18)  has a particulcar address used to
+(3:21) include the type info and send ino to the actual device or get the infomration from device to the
+(3:28) to the kernel (3:31)
+ ->There is a command called "LS USB" in CLI (3:36). It will dispaly all USB devices connected to your coomputer(3:40)
+ 
  
  
  */
