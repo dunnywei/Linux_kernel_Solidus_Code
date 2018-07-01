@@ -103,8 +103,12 @@ it has bandwith gurarentee (3:09) and it is usually found in audio/video device 
 ->End poit is identified by address and so each end point (3:18)  has a particulcar address used to
 (3:21) include the type info and send ino to the actual device or get the infomration from device to the
 (3:28) to the kernel (3:31)
- ->There is a command called "LS USB" in CLI (3:36). It will dispaly all USB devices connected to your coomputer(3:40)
- 
+ ->There is a command called "lsusb" in CLI (3:36). It will dispaly all USB devices connected to your coomputer(3:40)
+ ->After typing the command "lsusb", you will see sth like "root hub"=ignore(3:48)
+ ->focus on wacom or wireless mouse (3:59)
+ ->BUS 003=on Bus number 3 with ID=046d(vendor id):C52f(prouct id) (4:04)(4:09)
+ ->We need to know theose value during coding (4:13) for USB driver (4:33)
+ ->
  
  
  */
