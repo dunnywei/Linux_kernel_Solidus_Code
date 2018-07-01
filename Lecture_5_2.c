@@ -3,6 +3,14 @@
 #include<linux/module_param.h>
 //Lecture 5_2
 //For usb driver
+
+//probe function
+/*
+->It is called Whenever a device is plugged into your computer.However, it won't be called if another driver currentlly own that
+particlular device(@3:49)
+*/
+
+//usb_device_id
 static struct usb_device_id_pen_table[]={
    //0781:6506->this info is obtained by typing "lsusb" in CLI @(1:03)
 /*
@@ -12,6 +20,7 @@ available drivers to find the right driver (1:09) to call
 
 */
    {USB_DEVICE(0x0781,0x5406)}, //->I can have more than more usb devcies by adding (3:13)as the following line(3:18)
+	                       //so it can support more than one device (3:20)
    //{USB_DEVICE(v,p)},
 	{} /*For terminating entry*/
 }
@@ -22,7 +31,7 @@ static struct usb_driver pen_driver=
 	.id_table=pen_table,//->Id table is used to match this drive with any device that is attached to the USB bus(0:40)
 	                    //->This is how kernel knows which driver to call to(0:46) to handle a particular device when it is plugged into the computer(0:49)
 	                    //->This is a usb_device_id (0:55)
-	.probe=pen_probe,//
+	.probe=pen_probe,//(@3:34)
 	.disconnect=pen_disconnect,
 };
 static int __init pen_init(void)
