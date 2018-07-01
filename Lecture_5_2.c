@@ -14,7 +14,15 @@ plugged in (3:58) into the computer.
 (@4:07)Instead, you will have to unload the other driver and install yours in its place (4:13)
 */
 /*
-Proble function take as structure of (4:19)
+->Proble function take as structure of (4:19) usb_interface described from prvious video (4:25)
+->It represents a logical device such as a USB speaker, camera (@4:30)
+->The usb_device_id is the same as the usb_device_id pen_table[] (@4:38)
+->The device is plugged into the computer and the kernel calls the particular (@4:45) probe function (4:48) and want to see if the
+particular driver is willing to handle this device with usb_device_id supplied (4:55) At which points the probe function (4:57)
+->Probe function intialize the the local info (4:59), structures, memories (5:02) and return 0 indicating it is willing to manage the device
+(5:04)
+->However the probe function won't get called if another (5:10) driver is taking claim to the device (5:14)
+->
 */
 static int _pen_probe(struct usb_interfaace *interface,const struc usb_device_id *id)
 {
@@ -25,7 +33,7 @@ static int _pen_probe(struct usb_interfaace *interface,const struc usb_device_id
 
 
 //usb_device_id
-static struct usb_device_id_pen_table[]={
+static struct usb_device_id pen_table[]={
    //0781:6506->this info is obtained by typing "lsusb" in CLI @(1:03)
 /*
 ->what we have here is a way for the kernel to match any currenlty attached device (1:04) against all
