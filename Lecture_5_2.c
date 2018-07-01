@@ -3,11 +3,19 @@
 #include<linux/module_param.h>
 //Lecture 5_2
 //For usb driver
+static struct usb_device_id_pen_table[]={
+   //0781:6506->this info is obtained by typing "lsusb" in CLI @(1:03)
+   {USB_DEVICE(0x0781,0x5406)},
+	{} /*For terminating entry*/
+}
+
 static struct usb_driver pen_driver=
 {
-	.name="My-USB DEVICE pen driver",
-	.id_table=pen_table,
-	.probe=pen_probe,
+	.name="My-USB DEVICE pen driver", //nameing the drive as a whole(0:30)
+	.id_table=pen_table,//Id table is used to match this drive with any device that is attached to the USB bus(0:40)
+	                    //This is how kernel knows which driver to call to(0:46) to handle a particular device when it is plugged into the computer(0:49)
+	                    //This is a usb_device_id (0:55)
+	.probe=pen_probe,//
 	.disconnect=pen_disconnect,
 };
 static int __init pen_init(void)
