@@ -6,23 +6,6 @@
 
 //probe function
 /*
-->It is called Whenever a device is plugged into your computer.However, it won't be called if another driver currentlly own that
-particlular device(@3:49)
-->If another driver is currenly installed and indicating to the kernel that it is repsonsible to manage the particular device that's
-plugged in (3:58) into the computer.
-->(@4:00) Then your probe function will not get called. As a result, if you want your device driver to manage a device instead
-(@4:07)Instead, you will have to unload the other driver and install yours in its place (4:13)
-*/
-/*
-->Proble function take as structure of (4:19) usb_interface described from prvious video (4:25)
-->It represents a logical device such as a USB speaker, camera (@4:30)
-->The usb_device_id is the same as the usb_device_id pen_table[] (@4:38)
-->The device is plugged into the computer and the kernel calls the particular (@4:45) probe function (4:48) and want to see if the
-particular driver is willing to handle this device with usb_device_id supplied (4:55) At which points the probe function (4:57)
-->Probe function intialize the the local info (4:59), structures, memories (5:02) and return 0 indicating it is willing to manage the device
-(5:04)
-->However the probe function won't get called if another (5:10) driver is taking claim to the device (5:14)
-->
 */
 static int _pen_probe(struct usb_interfaace *interface,const struc usb_device_id *id)
 {
@@ -119,5 +102,26 @@ it has bandwith gurarentee (3:09) and it is usually found in audio/video device 
 ->Now I am going to instert the USB pendrive to my computer and then run (1:48) it again.
 ->Type "lsusb" again, I find my pen drive (1:52) with ID 0781:5406 as VendorID:Product(ID) (2:25)
 ->If you want to get more info about the vendor info, type "lsusb -v" (2:36)
-->
+
+
+-->In the probe function
+->It is called Whenever a device is plugged into your computer.However, it won't be called if another driver currentlly own that
+particlular device(@3:49)
+->If another driver is currenly installed and indicating to the kernel that it is repsonsible to manage the particular device that's
+plugged in (3:58) into the computer.
+->(@4:00) Then your probe function will not get called. As a result, if you want your device driver to manage a device instead
+(@4:07)Instead, you will have to unload the other driver and install yours in its place (4:13)
+
+->Proble function take as structure of (4:19) usb_interface described from prvious video (4:25)
+->It represents a logical device such as a USB speaker, camera (@4:30)
+->The usb_device_id is the same as the usb_device_id pen_table[] (@4:38)
+->The device is plugged into the computer and the kernel calls the particular (@4:45) probe function (4:48) and want to see if the
+particular driver is willing to handle this device with usb_device_id supplied (4:55) At which points the probe function (4:57)
+->Probe function intialize the the local info (4:59), structures, memories (5:02) and return 0 indicating it is willing to manage the device
+(5:04)
+->However the probe function won't get called if another (5:10) driver is taking claim to the device (5:14)
+
+-->Inside static struct usb_driver pen_driver
+->.disconnect=pen_disconnect (5:17)
+
 */
