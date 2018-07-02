@@ -4,6 +4,14 @@
 //Lecture 5_2
 //For usb driver
 
+
+//disconnect function
+static int pen_disconnect(struct usb_interfaace* interface)
+{
+	printk(KERN_INFO "USB KERNEL_DRIVE removed\n");
+	return 0;
+}
+
 //probe function
 /*
 */
@@ -122,6 +130,8 @@ particular driver is willing to handle this device with usb_device_id supplied (
 ->However the probe function won't get called if another (5:10) driver is taking claim to the device (5:14)
 
 -->Inside static struct usb_driver pen_driver
-->.disconnect=pen_disconnect (5:17)
+->.disconnect=pen_disconnect (5:17). This function is used to clean up the memory. It is called upon whenever the device is removed from
+the system (5:26)
+->The definition will be implemented in (5:30)
 
 */
