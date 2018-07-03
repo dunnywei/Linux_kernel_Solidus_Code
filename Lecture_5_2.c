@@ -6,10 +6,10 @@
 
 
 //disconnect function
-static int pen_disconnect(struct usb_interfaace* interface)
+static void pen_disconnect(struct usb_interfaace* interface)
 {
 	printk(KERN_INFO "USB KERNEL_DRIVE removed\n");
-	return 0;
+	return;
 }
 
 //probe function
@@ -132,6 +132,8 @@ particular driver is willing to handle this device with usb_device_id supplied (
 -->Inside static struct usb_driver pen_driver
 ->.disconnect=pen_disconnect (5:17). This function is used to clean up the memory. It is called upon whenever the device is removed from
 the system (5:26)
-->The definition will be implemented in (5:30)
-
+->The definition will be implemented in (5:30) disconnect function
+->disconnect function is called whenever the pen is removed (5:33)
+->That's the definition of the USB driver of "static struct usb_driver pen_driver" (5:39)
+->
 */
