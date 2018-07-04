@@ -50,16 +50,18 @@ static struct usb_driver pen_driver=
 static int __init pen_init(void)
 {
 	int ret=-1;
-	printk(KERN_ALERT "TEST:pen_init");
-	printk(KERN_ALERT "TEST:REGISTER drive with kernel");
+	printk(KERN_INFO "[*]TEST:pen_init");
+	printk(KERN_INFO "\tTEST:REGISTER drive with kernel");
 	ret=usb_register(&pen_driver);
-	printk(KERN_ALERT "TEST:Reiistration complete");
+	printk(KERN_INFO "\tTEST:Reiistration complete");
 	return ret;
 }
 
 static void __exit pen_exit(void)
 {
-	
+     printk(KERN_INFO "[*]TEST:exit of driver");
+     usb_deregister(&pen_drive);
+     printk(KERN_INFO "\tTEST:UNREGISTER drive with kernel DONE");	
 }
 
 module_int(pen_init);
@@ -140,4 +142,7 @@ the system (5:26)
 ->That's the definition of the USB driver of "static struct usb_driver pen_driver" (5:39)
 ->Now we need to register this pen drive (5:45) to the USB cord (5:47)
 ->It is like register the char device but we will now register the USB port (5:54). See function of pen_init(void)
+->So we will have debug info and register the pen_drive to the usb cord (6:05)
+->Then we will move to the pen_exit(void) function
+->we are going to degresiter our (6:10) pendrive (6:12)
 */
