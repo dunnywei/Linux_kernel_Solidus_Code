@@ -10,6 +10,10 @@ device finish writing the last byte before cotinue the user code (0:48)
 -Most common of all device driver (1:26)
 
 Block Device
--Writing/reading block by block
--CPU intensive, Operation take long time to complete, asynchorous with opoeration
+-Writing/reading block by block->It means the large number of information (1:41) in large chunks
+-Therefore it is CPU intensive (1:45)
+-Operation take long time to complete
+-asynchorous with opoeration therefore the user doesn't need to wait for the operation of reading/writing (2:05) to the device
+to be completed (2:08) before the user can continue doing anything (2:12) else
+->Step 1 is to create the device file (2:32)
 */
