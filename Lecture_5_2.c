@@ -51,6 +51,9 @@ static int __init pen_init(void)
 {
 	int ret=-1;
 	printk(KERN_ALERT "TEST:pen_init");
+	printk(KERN_ALERT "TEST:REGISTER drive with kernel");
+	ret=usb_register(&pen_driver);
+	printk(KERN_ALERT "TEST:Reiistration complete");
 	return ret;
 }
 
@@ -135,5 +138,6 @@ the system (5:26)
 ->The definition will be implemented in (5:30) disconnect function
 ->disconnect function is called whenever the pen is removed (5:33)
 ->That's the definition of the USB driver of "static struct usb_driver pen_driver" (5:39)
-->
+->Now we need to register this pen drive (5:45) to the USB cord (5:47)
+->It is like register the char device but we will now register the USB port (5:54). See function of pen_init(void)
 */
