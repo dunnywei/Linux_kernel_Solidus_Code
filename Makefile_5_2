@@ -1,7 +1,10 @@
 obj-m+=stick_driver.0
 
 KERNEL_DIR=/lib/modules/$(shell uname -r)/build
-
+#directory of source file of kernel (6:40)
+#I will only complie this module against my current running kernel (@6:47)
+PWD= $(shell pwd) 
+#end at (@6:56)
 all:
 	$(MAKE) -C $(KERNEL_DIR) SUBDIRS=$(PWD) modules
 clean:
