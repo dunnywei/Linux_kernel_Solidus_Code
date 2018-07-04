@@ -145,5 +145,13 @@ the system (5:26)
 ->So we will have debug info and register the pen_drive to the usb cord (6:05)
 ->Then we will move to the pen_exit(void) function
 ->we are going to degresiter our (6:10) pendrive (6:12)
-->Now let's move to the makefile (6:30)
+->Now let's move to the makefile (6:30) of "Makefile_5_2"
+->Now let's move to the CLI in linux (@6:56)
+->type "sudo make"
+->tyype "ls" and see "stick_driver.ko" (7:09)
+->type "suo insmod stick_driver.ko"
+->then type "dmesg" then you can that driver is insreted into the kernel (@7:19)
+->However the problem is the probe_function won't be called (@7:24)
+
+
 */
