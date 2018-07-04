@@ -145,4 +145,5 @@ the system (5:26)
 ->So we will have debug info and register the pen_drive to the usb cord (6:05)
 ->Then we will move to the pen_exit(void) function
 ->we are going to degresiter our (6:10) pendrive (6:12)
+->Now let's move to the makefile (6:30)
 */
